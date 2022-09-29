@@ -11,7 +11,7 @@ with open('config.json') as config_json:
 data_file = config['fif']
 raw = mne.io.read_raw_fif(data_file, verbose=False)
 
-fname = config['fifi']
+fname = config['ica']
 ica=mne.preprocessing.read_ica(fname, verbose=None)
 
 

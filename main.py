@@ -21,4 +21,4 @@ ecg_indices, ecg_scores = ica.find_bads_ecg(inst=raw, ch_name=None, threshold=co
               measure=config['measure'])
 
 ica.exclude = ecg_indices
-ica.save('out_dir/ica.fif',,overwrite=True)
+ica.save('out_dir/ica.fif',overwrite=True)

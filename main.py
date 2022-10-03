@@ -5,6 +5,15 @@ import mne
 import json
 from mne.preprocessing import ICA
 
+import matplotlib.pyplot as plt
+
+#workaround for -- _tkinter.TclError: invalid command name ".!canvas"
+import matplotlib
+matplotlib.use('Agg')
+import matplotlib.pyplot as plt
+
+
+
 with open('config.json') as config_json:
     config = json.load(config_json)
 
@@ -22,3 +31,8 @@ ecg_indices, ecg_scores = ica.find_bads_ecg(inst=raw, ch_name=None, threshold=co
 
 ica.exclude = ecg_indices
 ica.save('out_dir/ica.fif',overwrite=True)
+
+
+plt.figure(1)
+ica.plot_components()
+plt.savefig(os.path.join('out_figs','ica.png'))

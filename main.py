@@ -36,3 +36,12 @@ ica.save('out_dir/ica.fif',overwrite=True)
 plt.figure(1)
 ica.plot_components()
 plt.savefig(os.path.join('out_figs','ica.png'))
+
+# build product.json dictionary for brainlife message
+product = {}
+product['brainlife'] = []
+product['brainlife'].append({'type': 'info', "msg": "here are the excluded nodes: "+', '.join([ str(f) for f in ecg_indices ])})
+
+# save product.json
+with open('product.json','w') as prod_f:
+    json.dump(product,prod_f)

@@ -43,5 +43,5 @@ product['brainlife'] = []
 product['brainlife'].append({'type': 'info', "msg": "here are the excluded nodes: "+', '.join([ str(f) for f in ecg_indices ])})
 
 # save product.json
-with open('product.json','w') as prod_f:
+with open('product1.json','w') as prod_f:
     json.dump(product,prod_f)

@@ -17,7 +17,7 @@ Brainlife App to detect ECG related components using `find_bads_ecg` function.
     * `h_freq` High pass frequency.
     * `method` The method used for detection. If 'ctps', cross-trial phase statistics [7] are used to detect ECG-related components. See Notes.
     * `reject_by_annotation` Whether to omit bad segments from the data before fitting. If True (default), annotated segments whose description begins with 'bad' are omitted. If False, no rejection based on annotations is performed.
-    * `measure` Which method to use for finding outliers among the components:
+    * `measure` Which method to use for finding outliers among the components.
 
 3) Ouput files are:
     * `ica/fif` ica object file which included the ecg_indices to be execluded. 

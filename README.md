@@ -7,12 +7,21 @@ Brainlife App to detect ECG related components using `find_bads_ecg` function.
 
 ## app-events documentation
 
-2) Input file is:
+1) Input file is:
     * `meg/fif` meg data file
     * `ica/fif` ica object file
-5) Ouput files are:
-    * `ica/fif` ica object file which included the ecg_indices to be execluded 
-    * a plot of the new ICA components
+
+2) Input parameters:
+    * `threshold` Value above which a feature is classified as outlier.
+    * `l_freq` Low pass frequency.
+    * `h_freq` High pass frequency.
+    * `method` The method used for detection. If 'ctps', cross-trial phase statistics [7] are used to detect ECG-related components. See Notes.
+    * `reject_by_annotation` Whether to omit bad segments from the data before fitting. If True (default), annotated segments whose description begins with 'bad' are omitted. If False, no rejection based on annotations is performed.
+    * `measure` Which method to use for finding outliers among the components:
+
+3) Ouput files are:
+    * `ica/fif` ica object file which included the ecg_indices to be execluded. 
+    * a plot of the new ICA components.
    
 
 ## Authors
